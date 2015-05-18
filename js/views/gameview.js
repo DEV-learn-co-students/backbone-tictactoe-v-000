@@ -7,33 +7,49 @@
 
 		initialize: function() {
 			this.game = new app.Game();
+			this.game.on("X", this.drawX, this);
+			this.game.on("O", this.drawO, this);
+			this.game.on("win", this.win, this);
+			this.game.on("tie", this.tie, this);
+			this.render();
+			this
 			// wire up event listeners here
 			// call on render here
 		},
 
 		render: function() {
-			// your code here
+			var html = '<div id="message"></div><table border="1" cellpadding="40"><tbody><tr><td id="0"></td><td id="1"></td><td id="2"></td></tr><tr><td id="3"></td><td id="4"></td><td id="5"></td></tr><tr><td id="6"></td><td id="7"></td><td id="8"></td></tr></tbody></table>';
+      this.$el.append(html);
+      $("#container").append(this.$el);
 		},
 
 		handleClick: function(event) {
-			// your code here
-			// hint: try calling #target on event
+			var id = parseInt(event.target.id);
+			this.game.doTurn(id);
 		},
 
 		drawX: function(id) {
-			// your code here
+			$('td#' + id).html("X")
 		},
 
 		drawO: function(id) {
-			// your code here
+			$('td#' + id).html("O")
 		},
 
 		tie: function() {
-			// your code here
+			$('#message').text("Tie game");
+			this.clearBoard();
 		},
 
-		win: function() {
-			// your code here
+		win: function(player) {
+			$('#message').text("Player " + player + " Wins!");
+			this.clearBoard();
+		},
+
+		clearBoard: function() {
+			$('td').text("");
+			this.game.set("board", [null, null, null, null, null, null, null, null, null]);
+			this.game.set("turns", 0);
 		}
 
 	});
