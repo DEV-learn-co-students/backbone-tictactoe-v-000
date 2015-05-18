@@ -1,7 +1,6 @@
 'use strict';
 describe('board', function() {
 
-
   describe( "#initialize", function() {
     it("should set the game property of the view to be an instance of the game model", function() {
       var gameView = new app.GameView;
