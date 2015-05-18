@@ -1,34 +1,40 @@
 (function() {
-	var GameView = app.GameView = Backbone.View.extend({
-
+	app.GameView = Backbone.View.extend({
+		
 		events: {
-			"click" : "handleClick"
+			"click": "handleClick"
 		},
 
-		initialize : function() {
-
+		initialize: function() {
+			this.game = new app.Game();
+			// wire up event listeners here
+			// call on render here
 		},
 
-		render : function() {
+		render: function() {
+			// your code here
 		},
 
-		addIds : function() {
-
+		handleClick: function(event) {
+			// your code here
+			// hint: try calling #target on event
 		},
 
-		handleClick : function() {
-
+		drawX: function(id) {
+			// your code here
 		},
 
-		tie : function() {
-	
+		drawO: function(id) {
+			// your code here
 		},
 
-		win : function() {
-
+		tie: function() {
+			// your code here
 		},
 
-		clearBoard : function() {
+		win: function() {
+			// your code here
 		}
-	})
+
+	});
 })();
