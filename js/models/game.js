@@ -24,6 +24,7 @@
       var tempBoard = this.get("board");
       tempBoard[id] = this.player();
       this.set("board", tempBoard);
+      this.trigger(this.player(), id);
     },
     tie: function() {
       var spotsFilled = 0;
