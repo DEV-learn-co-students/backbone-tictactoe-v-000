@@ -143,7 +143,7 @@ describe('board', function() {
       $("#8").click();
       expect($("#message").text()).toEqual("Player O Wins!");  
     });
-    it("clears the table after a person wins, resets turns to 0, clears the board", function() {
+    it("clears the table after a person wins, resets turn to 0, clears the board", function() {
       setFixtures('<div id="container"></div>');
       var gameView = new app.GameView;
       $("#3").click();
@@ -160,7 +160,7 @@ describe('board', function() {
       tempBoard.forEach(function(square) {
         expect(square).toEqual(null);
       });
-      expect(gameView.game.get("turns")).toEqual(0);
+      expect(gameView.game.get("turn")).toEqual(0);
     });
   });
   describe( "#tie", function() {
@@ -178,7 +178,7 @@ describe('board', function() {
       $("#5").click();
       expect($("#message").text()).toEqual("Tie game");  
     });
-    it("clears the table after a person wins, resets turns to 0, clears the board", function() {
+    it("clears the table after a person wins, resets turn to 0, clears the board", function() {
       setFixtures('<div id="container"></div>');
       var gameView = new app.GameView;
       $("#0").click();
@@ -198,7 +198,7 @@ describe('board', function() {
       tempBoard.forEach(function(square) {
         expect(square).toEqual(null);
       });
-      expect(gameView.game.get("turns")).toEqual(0);
+      expect(gameView.game.get("turn")).toEqual(0);
     });
   });
 });
