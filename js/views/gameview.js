@@ -44,7 +44,7 @@
     clearBoard: function() {
       this.$("td").html("");
       this.game.set("board", [null, null, null, null, null, null, null, null, null]);
-      this.game.set("turns", 0);
+      this.game.set("turn", 0);
     }
   })
 })();
