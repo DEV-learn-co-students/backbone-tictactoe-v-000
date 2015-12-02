@@ -30,3 +30,5 @@ When building the view you will want to look into the below areas. Having a good
 * [Get id of element using jQuery](http://stackoverflow.com/a/3239600/2890716)
 
 
+
+<a href='https://learn.co/lessons/backbone-tictactoe' data-visibility='hidden'>View this lesson on Learn.co</a>
